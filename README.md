@@ -11,5 +11,5 @@ This JVM Agent is built with the aim to quickly identify:
 
 In order to activate it you have to update your command line with:
 
-JVM_OPTIONS="-javaagent:/tmp/perf-agent-1.0.jar=rank=5,reportFrequencyInSeconds=30,customPackageNamePrefix=com.sonarsource,methodsMeasurementActivated=false ${JVM_OPTIONS}"
+-javaagent:/tmp/perf-agent-1.0.jar=rank=5,reportFrequencyInSeconds=30,customPackageNamePrefix=com.sonarsource,methodsMeasurementActivated=false
 
