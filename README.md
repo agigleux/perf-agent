@@ -12,3 +12,8 @@ This JVM Agent is built with the aim to quickly identify:
 In order to activate it you have to update your command line with:
 
 -javaagent:/tmp/perf-agent-1.0.jar=rank=5,reportFrequencyInSeconds=30,customPackageNamePrefix=com.sonarsource,methodsMeasurementActivated=false
+
+## perf-agent.log
+
+The JVM Agent produces a file named perf-agent.log in /tmp containing all Metrics
+Override src/main/resources/log4j.xml to change the directory where this file is produced.
