@@ -11,6 +11,9 @@ import org.perf.agent.metrics.MetricReporter;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+/**
+ * Synthesis of all XXXStatementInstrumentation Classes (yet to be validated)
+ */
 public class JDBCStatementInstrumentation implements DatabaseInstrumentation {
 
   private static final Logger LOGGER = LoggerFactory.getLogger(JDBCStatementInstrumentation.class);

@@ -7,11 +7,19 @@ This JVM Agent is built with the aim to quickly identify:
 * TOP X Called SQL Queries: list the first X sql queries the mostly called since the JVM has started up
 * TOP X Methods: list of X methods costing the must in term of execution time
 
+## DB Supported
+
+* Sybase
+* Oracle
+* Microsoft SQL Server
+* H2
+* Postgresql
+
 ## How To Activate?
 
 In order to activate it you have to update your command line with:
 
--javaagent:/tmp/perf-agent-1.0.jar=rank=5,reportFrequencyInSeconds=30,customPackageNamePrefix=com.sonarsource,methodsMeasurementActivated=false
+-javaagent:/tmp/perf-agent-1.0.jar=rank=5,reportFrequencyInSeconds=30,customPackageNamePrefix=org.perf,methodsMeasurementActivated=true
 
 ## perf-agent.log
 
