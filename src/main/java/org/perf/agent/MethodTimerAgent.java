@@ -15,7 +15,7 @@ import org.slf4j.LoggerFactory;
  */
 public class MethodTimerAgent {
 
-  private static final Logger LOGGER = LoggerFactory.getLogger(MethodTimerAgent.class);
+  private static Logger LOGGER = LoggerFactory.getLogger(MethodTimerAgent.class);
 
   private static final int DEFAULT_RANK = 5;
   private static final int REPORT_FREQUENCY_SECONDS = 30;

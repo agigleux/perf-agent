@@ -21,6 +21,12 @@ In order to activate it you have to update your command line with:
 
 -javaagent:/tmp/perf-agent-1.0.jar=rank=5,reportFrequencyInSeconds=30,customPackageNamePrefix=org.perf,methodsMeasurementActivated=true
 
+## Parameters
+* rank: configure the value of the X, in TOP X ...
+* reportFrequencyInSeconds: delay in seconds to report collected Metrics
+* customPackageNamePrefix: used only by TOP X Methods: look for methods execution time only on Classes belonging to a package starting with thie parameter
+* methodsMeasurementActivated: activate or not the methods execution time
+
 ## perf-agent.log
 
 The JVM Agent produces a file named perf-agent.log in /tmp containing all Metrics
