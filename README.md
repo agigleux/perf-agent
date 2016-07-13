@@ -1,4 +1,5 @@
-https://travis-ci.org/agigleux/perf-agent.svg?branch=master
+JVM Perf Agent [![Build Status](https://travis-ci.org/agigleux/perf-agent.svg?branch=master)](https://travis-ci.org/agigleux/perf-agent) 
+==========
 
 ## Objectives
 
