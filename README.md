@@ -1,3 +1,5 @@
+https://travis-ci.org/agigleux/perf-agent.svg?branch=master
+
 ## Objectives
 
 This JVM Agent is built with the aim to quickly identify:
