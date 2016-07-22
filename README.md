@@ -1,4 +1,4 @@
-JVM Perf Agent [![Build Status](https://travis-ci.org/agigleux/perf-agent.svg?branch=master)](https://travis-ci.org/agigleux/perf-agent) [![SonarQube](https://sonarqube.com/api/badges/gate?key=org.perf:perf-agent)](https://sonarqube.com/api/badges/gate?key=org.perf:perf-agent) [![Dependency Status](https://dependencyci.com/github/agigleux/perf-agent/badge)](https://dependencyci.com/github/agigleux/perf-agent)
+JVM Perf Agent [![Build Status](https://travis-ci.org/agigleux/perf-agent.svg?branch=master)](https://travis-ci.org/agigleux/perf-agent) [![SonarQube](https://sonarqube.com/api/badges/gate?key=org.perf:perf-agent)](https://sonarqube.com/overview?id=org.perf%3Aperf-agent) [![Dependency Status](https://dependencyci.com/github/agigleux/perf-agent/badge)](https://dependencyci.com/github/agigleux/perf-agent)
 ==========
 
 ## Objectives
