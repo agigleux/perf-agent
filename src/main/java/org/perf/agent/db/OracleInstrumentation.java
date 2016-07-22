@@ -39,7 +39,6 @@ public class OracleInstrumentation implements DatabaseInstrumentation {
     LOGGER.debug("Instrumenting method " + method.getLongName());
 
     method.addLocalVariable("__metricStartTimeExecuteOracle", CtClass.longType);
-    // method.insertBefore("System.out.println( \"originalSql_Oracle:\" + this.getOriginalSql() );");
     method.insertBefore("__metricStartTimeExecuteOracle = System.currentTimeMillis();");
     method.insertAfter(MetricReporter.PATH_TO_REPORTTIME_METHOD
       + "(this.getOriginalSql(), System.currentTimeMillis() - __metricStartTimeExecuteOracle);");

@@ -39,7 +39,6 @@ public class H2Instrumentation implements DatabaseInstrumentation {
     LOGGER.debug("Instrumenting method " + method.getLongName());
 
     method.addLocalVariable("__metricStartTimeExecuteH2", CtClass.longType);
-    // method.insertBefore("System.out.println( \"originalSql_H2:\" + this.sqlStatement );");
     method.insertBefore("__metricStartTimeExecuteH2 = System.currentTimeMillis();");
     method
       .insertAfter(MetricReporter.PATH_TO_REPORTTIME_METHOD + "(this.sqlStatement, System.currentTimeMillis() - __metricStartTimeExecuteH2);");

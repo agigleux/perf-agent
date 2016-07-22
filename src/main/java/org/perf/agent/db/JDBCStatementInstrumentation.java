@@ -53,7 +53,6 @@ public class JDBCStatementInstrumentation implements DatabaseInstrumentation {
     LOGGER.debug("Instrumenting method " + method.getLongName());
 
     method.addLocalVariable("__metricStartTimeExecuteSybase", CtClass.longType);
-    // method.insertBefore("{ if ( $args.length >=1 ) { System.out.println($args[0]); } }");
     method.insertBefore("System.out.println( \"originalSql:\" + $args[0] );");
     method.insertBefore("__metricStartTimeExecuteSybase = System.currentTimeMillis();");
     method.insertAfter(MetricReporter.PATH_TO_REPORTTIME_METHOD + "($args[0], System.currentTimeMillis() - __metricStartTimeExecuteSybase);");

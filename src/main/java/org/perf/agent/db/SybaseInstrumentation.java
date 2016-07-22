@@ -42,7 +42,6 @@ public class SybaseInstrumentation implements DatabaseInstrumentation {
     LOGGER.debug("Instrumenting method " + method.getLongName());
 
     method.addLocalVariable("__metricStartTimeExecuteSybase", CtClass.longType);
-    // method.insertBefore("System.out.println( \"originalSql_Sybase:\" + this._query );");
     method.insertBefore("__metricStartTimeExecuteSybase = System.currentTimeMillis();");
     method.insertAfter(MetricReporter.PATH_TO_REPORTTIME_METHOD + "(this._query, System.currentTimeMillis() - __metricStartTimeExecuteSybase);");
   }

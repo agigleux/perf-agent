@@ -39,7 +39,6 @@ public class JtdsInstrumentation implements DatabaseInstrumentation {
     LOGGER.debug("Instrumenting method " + method.getLongName());
 
     method.addLocalVariable("__metricStartTimeExecuteJtds", CtClass.longType);
-    // method.insertBefore("System.out.println( \"originalSql_Jtds:\" + this.sql );");
     method.insertBefore("__metricStartTimeExecuteJtds = System.currentTimeMillis();");
     method.insertAfter(MetricReporter.PATH_TO_REPORTTIME_METHOD + "(this.sql, System.currentTimeMillis() - __metricStartTimeExecuteJtds);");
   }

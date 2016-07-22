@@ -20,7 +20,7 @@ public class MetricReporter {
 
   private static final Logger LOGGER = LoggerFactory.getLogger(MetricReporter.class);
 
-  private static MetricRegistry METRIC_REGISTRY = new MetricRegistry();
+  private static final MetricRegistry METRIC_REGISTRY = new MetricRegistry();
 
   private static MessageDigest MESSAGE_DIGEST;
 
@@ -103,8 +103,6 @@ public class MetricReporter {
   }
 
   static String escapeNewLine(String text) {
-    text = text.replace("\n", "").replace("\r", "");
-    text = text.replaceAll("\\s+", " ");
-    return text;
+    return text.replace("\n", "").replace("\r", "").replaceAll("\\s+", " ");
   }
 }

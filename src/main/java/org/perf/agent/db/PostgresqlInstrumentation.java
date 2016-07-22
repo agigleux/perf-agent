@@ -39,7 +39,6 @@ public class PostgresqlInstrumentation implements DatabaseInstrumentation {
     LOGGER.debug("Instrumenting method " + method.getLongName());
 
     method.addLocalVariable("__metricStartTimeExecutePostgresql", CtClass.longType);
-    // method.insertBefore("System.out.println( \"originalSql_Postgresql:\" + this.preparedQuery );");
     method.insertBefore("__metricStartTimeExecutePostgresql = System.currentTimeMillis();");
     method.insertAfter(MetricReporter.PATH_TO_REPORTTIME_METHOD
       + "(this.preparedQuery, System.currentTimeMillis() - __metricStartTimeExecutePostgresql);");
