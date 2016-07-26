@@ -1,5 +1,8 @@
 *.class
 
+dependency-reduced-pom.xml
+sonarqube.com
+
 # Mobile Tools for Java (J2ME)
 .mtj.tmp/
 
