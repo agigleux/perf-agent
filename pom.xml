@@ -16,6 +16,7 @@
 	<properties>
 		<metrics.version>3.0.2</metrics.version>
 		<sonar.exclusions>src/main/java/com/codahale/metrics/**/*</sonar.exclusions>
+		<jdk.min.version>1.7</jdk.min.version>
 	</properties>
 
 	<build>
@@ -35,6 +36,15 @@
 					</archive>
 				</configuration>
 			</plugin>
+			<plugin>
+		        <groupId>org.apache.maven.plugins</groupId>
+		        <artifactId>maven-compiler-plugin</artifactId>
+		        <version>3.5.1</version>
+		        <configuration>
+		          <source>${jdk.min.version}</source>
+		          <target>${jdk.min.version}</target>
+		        </configuration>
+      		</plugin>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-shade-plugin</artifactId>
