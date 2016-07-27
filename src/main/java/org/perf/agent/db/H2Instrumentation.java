@@ -17,7 +17,7 @@ public class H2Instrumentation implements DatabaseInstrumentation {
 
   private static List<String> DB_STMT_CLASSES = new ArrayList<String>();
   private static List<String> DB_STMT_EXECUTE_METHODS = new ArrayList<String>();
-
+ 
   static {
     DB_STMT_CLASSES.add("org.h2.jdbc.JdbcPreparedStatement");
     DB_STMT_CLASSES.add("org.h2.jdbc.JdbcCallableStatement");

@@ -56,7 +56,7 @@ public class MetricReporter {
 
     String tempDir = System.getProperty("java.io.tmpdir");
     File tempFile = new File(tempDir);
-    File outputDir = new File(tempFile, "/agent/");
+    File outputDir = new File(tempFile, "/perf-agent/");
     if (!outputDir.exists()) {
       outputDir.mkdirs();
     }
