@@ -33,4 +33,5 @@ Add this on your JVM command line:
 ## perf-agent.log
 
 The JVM Agent produces a file named perf-agent.log in /tmp containing all Metrics
+
 Override src/main/resources/log4j.xml to change the directory where this file is produced.
