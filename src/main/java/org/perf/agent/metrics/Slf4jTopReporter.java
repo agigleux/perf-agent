@@ -158,9 +158,7 @@ public class Slf4jTopReporter extends ScheduledReporter {
         findTOPCostlySQLRanking(sqlTOPCostlyRanking, entry);
         findTOPCalledSQLRanking(sqlTOPCalledRanking, entry);
       } else {
-        if (entry.getValue() instanceof Timer) {
-          findMethodsRanking(methodsRanking, entry);
-        }
+        findMethodsRanking(methodsRanking, entry);
       }
     }
 
@@ -285,7 +283,8 @@ public class Slf4jTopReporter extends ScheduledReporter {
 
         logger.info(marker, "type=SQLTIMER, sql={}, count={}, totalCost={}, mean={}, duration_unit={}",
           MetricReporter.escapeNewLine(sqlTimer.getSql()), sqlTimer.getCount(), sqlTimer.getCount()
-            * convertDuration(sqlTimer.getSnapshot().getMean()), convertDuration(sqlTimer.getSnapshot().getMean()), getDurationUnit());
+            * convertDuration(sqlTimer.getSnapshot().getMean()),
+          convertDuration(sqlTimer.getSnapshot().getMean()), getDurationUnit());
       }
     }
   }

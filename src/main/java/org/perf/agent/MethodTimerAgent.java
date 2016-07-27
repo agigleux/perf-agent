@@ -25,6 +25,9 @@ public class MethodTimerAgent {
   public static final String PARAM_CUSTOM_PACKAGE_PREFIX = "customPackageNamePrefix";
   public static final String PARAM_METHODS_MEASUREMENT = "methodsMeasurementActivated";
 
+  private MethodTimerAgent() {
+  }
+
   public static int getRank(Map<String, String> properties) {
     int r = DEFAULT_RANK;
     try {
@@ -66,7 +69,7 @@ public class MethodTimerAgent {
     LOGGER.info("Starting MethodTimer Agent");
     LOGGER.info("Agent Arguments: " + agentArguments);
 
-    Map<String, String> properties = new HashMap<String, String>();
+    Map<String, String> properties = new HashMap<>();
 
     if (agentArguments != null) {
       for (String propertyAndValue : agentArguments.split(",")) {
@@ -78,7 +81,7 @@ public class MethodTimerAgent {
       }
     }
 
-    //MetricReporter.enableConsoleReporter();
+    // MetricReporter.enableConsoleReporter();
     MetricReporter.enableLoggerReporter();
     MetricReporter.enableCSVReporter();
     MetricReporter.enableTopRankingLoggerReporter(getRank(properties), getReportFrequencyInSeconds(properties));

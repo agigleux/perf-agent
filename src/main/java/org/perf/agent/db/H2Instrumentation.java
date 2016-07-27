@@ -15,9 +15,9 @@ public class H2Instrumentation implements DatabaseInstrumentation {
 
   private static final Logger LOGGER = LoggerFactory.getLogger(H2Instrumentation.class);
 
-  private static List<String> DB_STMT_CLASSES = new ArrayList<String>();
-  private static List<String> DB_STMT_EXECUTE_METHODS = new ArrayList<String>();
- 
+  private static final List<String> DB_STMT_CLASSES = new ArrayList<>();
+  private static final List<String> DB_STMT_EXECUTE_METHODS = new ArrayList<>();
+
   static {
     DB_STMT_CLASSES.add("org.h2.jdbc.JdbcPreparedStatement");
     DB_STMT_CLASSES.add("org.h2.jdbc.JdbcCallableStatement");

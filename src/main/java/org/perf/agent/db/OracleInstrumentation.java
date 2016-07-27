@@ -15,8 +15,8 @@ public class OracleInstrumentation implements DatabaseInstrumentation {
 
   private static final Logger LOGGER = LoggerFactory.getLogger(OracleInstrumentation.class);
 
-  private static List<String> DB_STMT_CLASSES = new ArrayList<String>();
-  private static List<String> DB_STMT_EXECUTE_METHODS = new ArrayList<String>();
+  private static final List<String> DB_STMT_CLASSES = new ArrayList<>();
+  private static final List<String> DB_STMT_EXECUTE_METHODS = new ArrayList<>();
 
   static {
     DB_STMT_CLASSES.add("oracle.jdbc.driver.OraclePreparedStatement");

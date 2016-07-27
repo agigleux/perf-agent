@@ -15,8 +15,8 @@ public class JtdsInstrumentation implements DatabaseInstrumentation {
 
   private static final Logger LOGGER = LoggerFactory.getLogger(JtdsInstrumentation.class);
 
-  private static List<String> DB_STMT_CLASSES = new ArrayList<String>();
-  private static List<String> DB_STMT_EXECUTE_METHODS = new ArrayList<String>();
+  private static final List<String> DB_STMT_CLASSES = new ArrayList<>();
+  private static final List<String> DB_STMT_EXECUTE_METHODS = new ArrayList<>();
 
   static {
     DB_STMT_CLASSES.add("net.sourceforge.jtds.jdbc.JtdsPreparedStatement");

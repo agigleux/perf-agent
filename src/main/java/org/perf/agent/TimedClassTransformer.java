@@ -29,8 +29,8 @@ public class TimedClassTransformer implements ClassFileTransformer {
 
   private static final Logger LOGGER = LoggerFactory.getLogger(TimedClassTransformer.class);
 
-  private static final List<String> PACKAGES_TO_IGNORE = new ArrayList<String>();
-  private static final List<DatabaseInstrumentation> DB_INSTRUMENTATION_CLASSES = new ArrayList<DatabaseInstrumentation>();
+  private static final List<String> PACKAGES_TO_IGNORE = new ArrayList<>();
+  private static final List<DatabaseInstrumentation> DB_INSTRUMENTATION_CLASSES = new ArrayList<>();
 
   static {
     DB_INSTRUMENTATION_CLASSES.add(new JDBCStatementInstrumentation());
@@ -67,19 +67,6 @@ public class TimedClassTransformer implements ClassFileTransformer {
   private ClassPool classPool;
   private Map<String, String> properties;
 
-  public String getCustomPackagePrefix() {
-    String r = properties.get(MethodTimerAgent.PARAM_CUSTOM_PACKAGE_PREFIX);
-    if (r == null) {
-      r = "";
-    }
-    return r;
-  }
-
-  private boolean getMethodsMeasurement() {
-    String methodsMeasurement = properties.get(MethodTimerAgent.PARAM_METHODS_MEASUREMENT);
-    return Boolean.valueOf(methodsMeasurement);
-  }
-
   public TimedClassTransformer(Map<String, String> properties) {
     this.properties = properties;
 
@@ -96,6 +83,20 @@ public class TimedClassTransformer implements ClassFileTransformer {
     }
   }
 
+  public String getCustomPackagePrefix() {
+    String r = properties.get(MethodTimerAgent.PARAM_CUSTOM_PACKAGE_PREFIX);
+    if (r == null) {
+      r = "";
+    }
+    return r;
+  }
+
+  private boolean getMethodsMeasurement() {
+    String methodsMeasurement = properties.get(MethodTimerAgent.PARAM_METHODS_MEASUREMENT);
+    return Boolean.valueOf(methodsMeasurement);
+  }
+
+  @Override
   public byte[] transform(ClassLoader loader, String fullyQualifiedClassName, Class<?> classBeingRedefined, ProtectionDomain protectionDomain,
     byte[] classBytes) throws IllegalClassFormatException {
     String className = fullyQualifiedClassName.replace("/", ".");
