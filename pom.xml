@@ -5,14 +5,17 @@
 	<groupId>org.perf</groupId>
 	<artifactId>perf-agent</artifactId>
 	<packaging>jar</packaging>
-	<name>perf-agent</name>
+	<name>JVM SQL and Methods Performance Agent</name>
 	<version>1.1-SNAPSHOT</version>
+	<description>JVM SQL and Methods Performance Agent</description>
+
 	<prerequisites>
 		<maven>3.1.1</maven>
 	</prerequisites>
 
 	<properties>
 		<metrics.version>3.0.2</metrics.version>
+		<sonar.exclusions>src/main/java/com/codahale/metrics/**/*</sonar.exclusions>
 	</properties>
 
 	<build>
