@@ -4,6 +4,13 @@ jdk:
 - oraclejdk8
 cache:
   directories:
-  - "$HOME/.m2/repository"
+  - $HOME/.m2/repository
 notifications:
-  email: false
+  email: true
+env:
+  global:
+    secure: TG/sPpWeAMSHpl8SY9BlKtRapCf3BsoUbT+OSeClIToEaMlPH9WD+n17uqy3U8NHLJ3uMGTu7L2oZMnxU36grnZfZCg+Gq99Xh2isgyfW9918GOMBWmML/6R+L+htscS98inxeSs2bRnNDzRmGHnLlTMWmXUZEM8Q+Y89ma3vG6YS5EPtdAe4o0Vk3wveAPOxgycspNVPexHiokbdzkhlVB9Tr/f0f/FXRA1RR4BD4zTDKXmMSHTf1CncgXQn2xeaMsmNBXcbvsNShHCDhPGMC/SYHRrN6biq1XR7n76bc0qycxFYLjBaOWkWloqiXaRE+/7limK8TuyLC6IIjlYtPPKJ3/9SxQsotWrQ8V8ZiwGU4l31a0xDZbHT3LG13PU9FsoUIx8Kx0o17VeP03ZdewXLtYgUZr4GScKSJFybzEAnOuWzlQe0aSaQnuEHBxRkRMnXeme09+K2sdUUq99PO9pagdIyuIinM0ZmlJp+IKzvJ4zsZofbIVe8R3ql2hy+h4R1suz3H40iU43vw7zmLoH76ByOyCCGl7ecHSeHpRhbHswa/l/SJQxtU4B8uuDxZIjK2ZszVOl0s18cXr9d/c2oRmniYx7hvxlWxq8jONBEtVhFYQ1PSEaQvnqSrMPEJXq34vEx3UaEJLg4TTl2ziHenhN+P/iM5PIoxB1DJo=
+script: mvn clean org.jacoco:jacoco-maven-plugin:prepare-agent package sonar:sonar \
+    -Dsonar.host.url=https://sonarqube.com \
+    -Dsonar.login=$SONAR_TOKEN
+    
